@@ -86,6 +86,9 @@
 							<li>
 								<a class="navitem" href="#">Student</a>
 							</li>
+							<li>
+								<a class="navitem" href="#">University</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
