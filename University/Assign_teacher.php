@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		if($counter == 0) {
     $signup_status = "Sign Up Successful";
 
-    $user = fopen("../fproj/assign.txt", "w") or die("Unable to open file!");
+    $user = fopen("assign.txt", "w") or die("Unable to open file!");
     fwrite($user, $courseteacher. "," . $course);
     fwrite($user, "\n");
     fclose($user);
