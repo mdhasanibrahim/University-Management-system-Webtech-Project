@@ -8,7 +8,7 @@
 
    <div>
   
-   <form action = "../fproj/action_login.php" method = "POST">
+   <form action = "action_login.php" method = "POST">
      <fieldset style="background-color: lightblue;">
        <table align="center">
 	   <div>
@@ -38,7 +38,7 @@
          <tr>
 		
 		 <td colspan="2" align="right">
-         <button type="button" onClick="document.location.href='/University/signup.php'">Sign Up</button>
+         <button type="button" onClick="document.location.href='signup.php'">Sign Up</button>
          <input type="submit" value=" Submit"/>
 		 </td>
 		 </tr>

@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<form class="box" action="" method="post">
-			<a href=""><img src="resources/logo.png" width="60" title="Eastern Prime University" alt="Eastern Prime University"></a>
+			<a href="../Admin/index.php"><img src="resources/logo.png" width="60" title="Eastern Prime University" alt="Eastern Prime University"></a>
 			<h1>Login</h1>
 			<p style="color:#ee5253;"><?php echo $invalid_info;?></p>
 			<input type="text" name="username" value="<?php echo $username;?>" placeholder="Username">

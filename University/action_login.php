@@ -19,7 +19,7 @@
 
   		$userFound = false;
 
-  		$myfile = fopen("../fproj/users.txt", "r") or die("Unable to open file!");
+  		$myfile = fopen("users.txt", "r") or die("Unable to open file!");
 
       		while ($line = fgets($myfile)) {
         		$words = explode(",",$line);
@@ -40,7 +40,7 @@
       		}
       		else {
       			echo "<p>Login Unsuccessful</p>";
-      			echo "<a href='../view/login.php'>Try Again!</a>";
+      			echo "<a href='login.php'>Try Again!</a>";
       		}
   		
   	}

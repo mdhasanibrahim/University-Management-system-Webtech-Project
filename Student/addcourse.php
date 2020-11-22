@@ -21,7 +21,7 @@
 				<form action="" method="post">
 				    <table>
 					    <tr>
-						    <td align="right"><input style="color:red;font-weight: bold;" type="submit" name="register" value="Confirm Registration"></td>
+						    <td align="right"><input style="color:red;font-weight: bold;" type="submit" name="register" value="Confirm Registration" onclick="alert('Registration Confirmed Successfully.')"></td>
 						</tr>
 						<tr>
 						    <td><hr></td>

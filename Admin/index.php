@@ -81,13 +81,13 @@
 								<a class="navitem" href="admin_login.php">Admin</a>
 							</li>
 							<li>
-								<a class="navitem" href="#">Faculty</a>
+								<a class="navitem" href="../Teacher/T_login.php">Faculty</a>
 							</li>
 							<li>
-								<a class="navitem" href="#">Student</a>
+								<a class="navitem" href="../Student/login.php">Student</a>
 							</li>
 							<li>
-								<a class="navitem" href="#">University</a>
+								<a class="navitem" href="../University/login.php">University</a>
 							</li>
 						</ul>
 					</li>

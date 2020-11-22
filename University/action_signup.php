@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if($counter == 0) {
     $signup_status = "Sign Up Successful";
 
-    $user = fopen("../fproj/users.txt", "w") or die("Unable to open file!");
+    $user = fopen("users.txt", "w") or die("Unable to open file!");
     fwrite($user, $firstname. "," . $lastname. ",". $email. ",". $psw);
     fwrite($user, "\n");
     fclose($user);
@@ -127,7 +127,7 @@ function test_input($data) {
     <br />
 
     <div>
-      <button type="button" onClick="document.location.href='../Project/login.php'">Login</button>
+      <button type="button" onClick="document.location.href='login.php'">Login</button>
       <button type="submit">Submit</button>
     </div>
   </div>

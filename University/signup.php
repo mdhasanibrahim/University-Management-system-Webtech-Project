@@ -5,7 +5,7 @@
 </head>
 <body>
 
-  <form action="../fproj/action_signup.php" method="POST">
+  <form action="action_signup.php" method="POST">
    <fieldset style="background-color: lightblue;">
   <table align="center">
   <div>
@@ -73,7 +73,7 @@
    <div>
 	 <tr style="line-height: 60px;">
 	 <td>
-      <button type="button" onClick="document.location.href='../University/login.php'">Login</button>
+      <button type="button" onClick="document.location.href='login.php'">Login</button>
       <button type="submit">Submit</button>
 	  </td>
 	  </tr>
