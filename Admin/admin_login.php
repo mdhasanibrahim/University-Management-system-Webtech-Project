@@ -1,3 +1,4 @@
+
 <?php
 
 	$username="";
@@ -13,8 +14,8 @@
 			$err_username="*Username required";
 			$hasError = true;
 		}
-		elseif(strlen($_POST["username"]) < 6){
-			$err_username="*Username must be 6 characters long";
+		elseif(strlen($_POST["username"]) < 5){
+			$err_username="*Username must be 5 characters long";
 			$hasError = true;
 		}
 		else{
@@ -22,10 +23,6 @@
 		}
 		if(empty($_POST["password"])){
 			$err_password="*Password required";
-			$hasError = true;
-		}
-		elseif(strlen($_POST["password"]) < 6){
-			$err_password="*Password must be 6 characters long";
 			$hasError = true;
 		}
 		else{
@@ -53,67 +50,7 @@
 <html>
 	<head>
 		<title>Login</title>
-		<style>
-			body{
-				background:#1dd1a1;
-				margin:0;
-				padding:0;
-				font-family: sens-serif;
-				
-			}
-			.box{
-				width: 300px;
-				padding: 40px;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				background:#576574;
-				text-align: center;
-                border-radius: 10px;
-			}
-            .box h1{
-                color: #fff;
-                text-transform: uppercase;
-                font-weight: 500;
-            }
-            .box input[type = "text"], .box input[type = "password"]{
-                border: 0;
-                background: none;
-                display: block;
-                margin: 20px auto;
-                text-align: center;
-                border: 2px solid #48dbfb;
-                padding: 14px 10px;
-                width: 200px;
-                outline: none;
-                color: #ffffff;
-                border-radius: 24px;
-                transition: 0.25s;
-            }
-            .box input[type = "text"]:focus, .box input[type = "password"]:focus{
-                width:280px;
-                border-color:#1dd1a1;
- 
-            }
-            .box input[type="submit"]{
-                border: 0;
-                background: none;
-                display: block;
-                margin: 20px auto;
-                text-align: center;
-                border: 2px solid #1dd1a1;
-                padding: 14px 40px;
-                outline: none;
-                color: #ffffff;
-                border-radius: 24px;
-                transition: 0.25s;
-                cursor: pointer;
-            }
-            .box input[type="submit"]:hover{
-                background: #1dd1a1;
-            }
-		</style>
+		<link rel="stylesheet" href="css/adminLogin.css">
 	</head>
 	<body>
 		<form class="box" action="" method="post">
