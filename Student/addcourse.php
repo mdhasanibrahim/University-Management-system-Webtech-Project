@@ -1,5 +1,16 @@
 <?php include_once "session-header.php" ;?>
 <?php include_once "validation/validation-addcourse.php" ;?>
+<?php
+    require_once 'models/db_connection.php';
+	$id=$_COOKIE["studentid"];
+	function getAvailableCourses(){
+		global $id;
+        $query="SELECT offered_courses.course_title FROM offered_courses EXCEPT SELECT offered_courses.course_title FROM student_info INNER JOIN student_course ON student_info.id=student_course.id INNER JOIN offered_courses ON student_course.course_id=offered_courses.course_id WHERE student_info.id='$id'";
+        return get($query);
+    }
+	$available_courses=getAvailableCourses();
+	
+?>
 <html>
     <head>
 	    <title>Student Profile</title>
@@ -21,35 +32,24 @@
 				<form action="" method="post">
 				    <table>
 					    <tr>
-						    <td align="right"><input style="color:red;font-weight: bold;" type="submit" name="register" value="Confirm Registration" onclick="alert('Registration Confirmed Successfully.')"></td>
+						    <td align="right"><input style="color:red;font-weight: bold;" type="submit" name="register" value="Confirm Registration"></td>
 						</tr>
 						<tr>
 						    <td><hr></td>
 						</tr>
 						<tr>
-						    <td><h3>ADVANCE DATABASE MANAGEMENT SYSTEM</h3></td>
+						    <td style="color:red"><?php echo $err_msg;?></td>
 						</tr>
+						<?php foreach($available_courses as $course){ 
+						
+						?>
 						<tr>
-						    <td><input type="radio"name="ADVANCE DATABASE MANAGEMENT SYSTEM" value="A">0001|A|Monday 8AM-10AM Theory & Wednesday 8AM-11AM Lab</td>
-						</tr>
-						<tr>
-						    <td><input type="radio"name="ADVANCE DATABASE MANAGEMENT SYSTEM" value="B">0002|B|Monday 11AM-1PM Theory & Wednesday 11AM-2PM Lab</td>
-						</tr>
-						<tr>
-						    <td><hr></td>
-						</tr>
-						<tr>
-						    <td><h3>ADVANCE PROGRAMMING WITH JAVA</h3></td>
-						</tr>
-						<tr>
-						    <td><input type="radio"name="ADVANCE PROGRAMMING WITH JAVA" value="A">0003|A|Sunday 8AM-10AM Theory & Tuesday 8AM-11AM Lab</td>
-						</tr>
-						<tr>
-						    <td><input type="radio"name="ADVANCE PROGRAMMING WITH JAVA" value="B">0004|B|Sunday 8AM-10AM Theory & Tuesday 8AM-11AM Lab</td>
+						    <td><input type="checkbox" name="avCourse[]" value="<?php echo $course['course_title'];?>"><?php echo $course['course_title'];?></td>
 						</tr>
 						<tr>
 						    <td><hr></td>
 						</tr>
+						<?php } ?>
 					</table>
 				</form>
 		        </div>

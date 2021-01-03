@@ -1,4 +1,13 @@
 <?php include_once "session-header.php" ;?>
+<?php
+    require_once 'models/db_connection.php';
+	$id=$_COOKIE["studentid"];
+	function getNotes($course_id){
+        $query="SELECT * FROM course_notes WHERE course_id='$course_id'";
+        return get($query);
+    }
+	$note_info=getNotes($_GET['course_id']);
+?>
 <html>
     <head>
 	    <title>Student Profile</title>
@@ -21,24 +30,19 @@
 					    <tr style="background-color: #187fc3;">
 						    <td><h1>Notes<h1></td>
 						</tr>
+						<?php foreach($note_info as $n)
+						{ if($n['notice']=="")
+							{
+								continue;
+							}
+						?>
 					    <tr>
-						    <td><h3>1. &nbsp Assignment is uploaded,check it out.</h3></td>
+						    <td><h3>#. &nbsp <?php echo $n['notice']; ?></h3></td>
 						</tr>
 						<tr>
 						    <td><hr></td>
 						</tr>
-						<tr>
-						    <td><h3>2. &nbsp Makeup class of last class will be on next sunday.</h3></td>
-						</tr>
-						<tr>
-						    <td><hr></td>
-						</tr>
-						<tr>
-						    <td><h3>3. &nbsp Quiz-1 will be on 21th.Sylebus:lec 1-3.</h3></td>
-						</tr>
-						<tr>
-						    <td><hr></td>
-						</tr>
+						<?php } ?>
 					</table>
 		        </div>
 		    </div>

@@ -1,4 +1,13 @@
 <?php include_once "session-header.php" ;?>
+<?php
+    require_once 'models/db_connection.php';
+	$id=$_COOKIE["studentid"];
+	function getNotes($course_id){
+        $query="SELECT * FROM course_notes WHERE course_id='$course_id'";
+        return get($query);
+    }
+	$note_info=getNotes($_GET['course_id']);
+?>
 <html>
     <head>
 	    <title>Student Profile</title>
@@ -21,18 +30,19 @@
 					    <tr style="background-color: #187fc3;">
 						    <td><h1>Notes<h1></td>
 						</tr>
+						<?php foreach($note_info as $n)
+						{ if($n['note_name']=="")
+							{
+								continue;
+							}
+						?>
 					    <tr>
-						    <td><h3>1. &nbsp <a href="notes/Note1.txt" download>Note 1.txt</a></h3></td>
+						    <td><h3># &nbsp <a href="<?php echo $n['note_link']; ?>" download><?php echo $n['note_name']; ?></a></h3></td>
 						</tr>
 						<tr>
 						    <td><hr></td>
 						</tr>
-						<tr>
-						    <td><h3>2. &nbsp <a href="notes/Lecture1.ppt" download>Lecture 1.ppt</a></h3></td>
-						</tr>
-						<tr>
-						    <td><hr></td>
-						</tr>
+						<?php } ?>
 					</table>
 		        </div>
 		    </div>

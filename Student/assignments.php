@@ -24,9 +24,6 @@
 						    <td><h1>Assignments<h1></td>
 						</tr>
 						<tr>
-						    <td><h3>Mid Assignment 1.</h3></td>
-						</tr>
-						<tr>
 						    <td><input type="file" name="file"/></td>
 						</tr>
 						<tr>

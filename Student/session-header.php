@@ -1,6 +1,6 @@
 <?php 
     session_start();
-	if(isset($_COOKIE["username"]))
+	if(isset($_COOKIE["studentid"]))
 	{}
     else
 	{

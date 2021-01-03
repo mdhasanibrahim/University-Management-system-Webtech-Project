@@ -1,4 +1,14 @@
 <?php include_once "session-header.php" ;?>
+<?php
+    require_once 'models/db_connection.php';
+	$id=$_COOKIE["studentid"];
+	function getStudentInfo(){
+		global $id;
+        $query="SELECT * FROM student_info WHERE id=".$id."";
+        return get($query);
+    }
+	$student_info=getStudentInfo();
+?>
 <html>
     <head>
 	    <title>Grade Report</title>
@@ -25,42 +35,42 @@
 						<tr>
 						    <td><h3>Student ID</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>18-37721-1</h3></td>
+							<td><h3><?php echo $student_info[0]["id"];?></h3></td>
 							<td><h3>Core</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>BScCSE, Spring 15-16, Core</h3></td>
+							<td><h3><?php echo $student_info[0]["core"];?></h3></td>
 						</tr>
 						<tr>
 						    <td><h3>Student Name</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>MD.HASAN IBRAHIM</h3></td>
+							<td><h3><?php echo $student_info[0]["name"];?></h3></td>
 							<td><h3>Major</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>-</h3></td>
+							<td><h3><?php echo $student_info[0]["major"];?></h3></td>
 						</tr>
 						<tr>
 						    <td><h3>Credit(s) Completed</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>116</h3></td>
+							<td><h3><?php echo $student_info[0]["credit"];?></h3></td>
 							<td><h3>Second Major</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>-</h3></td>
+							<td><h3><?php echo $student_info[0]["second_major"];?></h3></td>
 						</tr>
 						<tr>
 						    <td><h3>Course(s) Completed</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>44</h3></td>
+							<td><h3><?php echo $student_info[0]["course_completed"];?></h3></td>
 							<td><h3>Minor</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>-</h3></td>
+							<td><h3><?php echo $student_info[0]["minor"];?></h3></td>
 						</tr>
 						<tr>
 						    <td><h3>Cgpa</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>3.95</h3></td>
+							<td><h3><?php echo $student_info[0]["cgpa"];?></h3></td>
 							<td><h3>Elective</h3></td>
 							<td><h3>:</h3></td>
-							<td><h3>BScCSE, Spring 15-16, Elective</h3></td>
+							<td><h3><?php echo $student_info[0]["elective"];?></h3></td>
 						</tr>
 					</table>
 		        </div>
