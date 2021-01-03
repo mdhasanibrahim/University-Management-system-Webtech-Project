@@ -1,6 +1,6 @@
 <?php 
 	if(!isset($_COOKIE["username"])){
-		header("Location: index.php");
+		
 	}
 	
 ?>
@@ -10,7 +10,7 @@
 		<style>
 			.logout{
 				color: #ffff;
-				background-color: #616161;
+				background-color: maroon;
 				border: none;
 				padding: 8px 16px;
 				text-decoration: none;
@@ -24,23 +24,23 @@
 				background-color:#000000;
 			}
 			body{
-				background-image: url(img/graduate.jpg);
+				background-image: url(img/lib.jpg);
 				background-position:center-center;
 				background-size:cover;
 				background-repeat: no-repeat;
 			}
 			.navigation {
-				background: #3A0B0B;
+				background: black;
 				min-height: 43px;
-				border-bottom: 3px solid #FF6E39;
+				border-bottom: 3px solid black;
 			}
 			.navigation ul{}
 			.navigation ul li {
 				list-style: none;
-				background: #3A0B0B;
+				background: black;
 				float: left;
-				border-right: 1px solid #5f0f0f;
-				border-left: 1px solid #5f0f0f;
+				border-right: 1px solid white;
+				border-left: 1px solid white;
 				position: relative;
 				z-index:1;
 			}
@@ -56,7 +56,7 @@
 			}
 			.navigation ul li a:hover, #active {
 				color: #000;
-				background: #FF6E39;
+				background: skyblue;
 				transition:.5s;
 			}
 			.navigation ul li ul {
@@ -68,12 +68,12 @@
 				display: block;
 			}
 			.navigation ul li ul li:last-child {
-				border-bottom:0px solid #631010;
+				border-bottom:0px solid black;
 			}
 			.navigation ul li ul li {
-				background: #8e1d1d;
+				background: skyblue;
 				width: 145px;
-				border-bottom: 2px solid #631010;
+				border-bottom: 2px solid black;
 				float: none;
 				border-right: 0px;
 				border-left: 0px;
@@ -97,7 +97,7 @@
 				z-index:0;
 			}
 			.sbtn{
-				background-color:#3E9A2D;
+				background-color:black;
 				color:white;
 				outline: none;
 				border: none;
@@ -117,57 +117,60 @@
 	</head>
 	<body>
 		
-		<span style="font-size:30px; color:#ffff">Welcome, 
+		<span style="font-size:30px; color:black">Welcome, 
 			<?php 
 				echo $_COOKIE["username"];
 			?>
 		</span> 
-		<a class="logout" href='admin_login.php'>Log Out</a>
+		<a class="logout" href='login.php'>Log Out</a>
 		<br>
 		<div class="navigation">
 			<ul>
 			
-				<li><a href="#">STUDENT</a>
+				<li><a href="#">OFFERED COURSES</a>
 					<ul> 
-						<li><a href="addstudent.php">Add Student</a></li>
-						<li><a href="student_info.php">Update</a></li>
-						<li><a href="student_info.php">Delete</a></li>
-						<li><a href="student_info.php">View</a></li>		
+						
+						<li><a href="offered.php">Create</a></li>
+						<li><a href="offeredinfo.php">View</a></li>
+						
+							
 					</ul>
 				</li>
-				<li><a href="#">FACULTY</a>
+				<li><a href="#">TEACHER</a>
 					<ul> 
-						<li><a href="addfaculty.php">Add Faculty</a></li>
-						<li><a href="faculty_info.php">Update</a></li>
-						<li><a href="faculty_info.php">Delete</a></li>
-						<li><a href="faculty_info.php">View</a></li>		
+						<li><a href="addteacher.php">Add Teacher</a></li>
+						<li><a href="assigncourse.php">Assign Courses</a></li>
+						<li><a href="course_info.php">Assigned Courses</a></li>
+						<li><a href="teacherupdate.php">Update</a></li>
+						<li><a href="teacherdelete.php">Delete</a></li>		
 					</ul>
 				</li>
-				<li><a href="#">UNIVERSITY</a>
+				<li><a href="#">STUDENTS</a>
 					<ul> 
-						<li><a href="adduniversity.php">Add University</a></li>
-						<li><a href="#">Update</a></li>
-						<li><a href="#">Delete</a></li>
-						<li><a href="#">View</a></li>		
+					<li><a href="enrollinfo.php">Student Enrollment</a></li>
+					<li><a href="student_info.php"> Enrolled Students</a></li>
+					
+						
+								
 					</ul>
 				</li>
-				<li><a href="#">COURSE</a>
-					<ul> 
-						<li><a href="addcourse.php">Add Course</a></li>
-						<li><a href="#">Update</a></li>
-						<li><a href="#">Delete</a></li>
-						<li><a href="#">View</a></li>		
-					</ul>
-				</li>
+				
 				<li><a href="#">GENERATE REPORT</a>
 					<ul> 
-						<li><a href="student_enrollment.php">Student Enrollment</a></li>
-						<li><a href="course_enrollment.php">Course Enrollment</a></li>	
+						<li><a href="offered_courses_report.php">Offered Courses</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="#">RELEASE CERTIFICATE</a>
+					<ul> 
+						<li><a href="certificate">Certificate</a></li>
+						
 					</ul>
 				</li>
 			</ul>
 		</div>
 		<div class="sitem">
+		
 		<input class="sbox" type="text" name="searchbox" placeholder="type here..."><br>
 		<input class="sbtn" type="submit" name="search" value="Search">
 		</div>
